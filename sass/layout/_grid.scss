@@ -1,6 +1,5 @@
 .row {
     max-width: $grid-width; //1140px max MEANS  it can be  SMALLER
-    background-color: #eee;
     margin: 0 auto; //To center a block element inside a block element
 
     &:not(:last-child) {
@@ -10,7 +9,6 @@
     @include clearfix; // puts it back to with height from mixin
 
     [class^="col-"] {
-        background-color: orangered;
         float: left;
 
         &:not(:last-child) {

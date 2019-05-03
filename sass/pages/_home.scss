@@ -28,6 +28,12 @@
         padding: 10rem 0;
     }
 
+    @include respond(phone) {
+        .row {
+            max-width: 30rem;
+        }
+    }
+
 }
 
 .section-tours {

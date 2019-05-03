@@ -8,7 +8,7 @@
     transition: transform .3s;
 
     @include respond(phone) {
-        padding: 2rem;
+        padding: 3rem;
     }
 
     &__icon {

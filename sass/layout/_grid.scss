@@ -4,6 +4,17 @@
 
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+
+        @include respond (tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+    
+    @include respond (tab-port) {
+        max-width: 95rem;
+    }
+    @include respond (phone) {
+        max-width: 45rem;
     }
 
     @include clearfix; // puts it back to with height from mixin
@@ -13,6 +24,15 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond (phone) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+
+        @include respond (phone) {
+            width: 100% !important;
         }
 
     }

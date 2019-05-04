@@ -1,6 +1,12 @@
 .header {
     height: 95vh;
     background-image:
+        -webkit-gradient(linear,
+        left top, right bottom,
+        from(rgba($color-primary-light, 0.80)),
+        to(rgba($color-primary-dark, 0.80))),
+        url('../img/hero-small.jpg');
+    background-image:
         linear-gradient(to right bottom,
         rgba($color-primary-light, 0.80),
         rgba($color-primary-dark, 0.80)),
@@ -9,10 +15,22 @@
     background-size: cover;
     background-position: top;
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
-    @media (min-resolution: 192dpi) and (min-width: 37.5em),
-    (min-width: 125em) {
+    @supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) {
+            clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+            height: 95vh;
+
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+            (min-resolution: 192dpi) and (min-width: 37.5em),
+            (min-width: 125em) {
+            background-image: -webkit-gradient(linear,
+            left top, right bottom,
+            from(rgba($color-secondary-light, 0.80)),
+            to(rgba($color-secondary-dark, 0.80))),
+            url('../img/hero.jpg');
             background-image: linear-gradient(to right bottom,
             rgba($color-secondary-light, 0.80),
             rgba($color-secondary-dark, 0.80)),
@@ -21,7 +39,8 @@
 
 
     @include respond (phone) {
-        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+                clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
     }
 
     &__logo-box {
@@ -42,6 +61,7 @@
         top: 40%;
         left: 50%;
         /* Shifts half of the box to the left and, half of the height upwards  ---> in relation to itself */
-        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
     }
 }

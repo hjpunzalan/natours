@@ -1,6 +1,5 @@
 # natours
 
-First project of the Advanced CSS and SASS course.
 
 This project utilises float positioning and new CSS tools such as :
    - clip-path
